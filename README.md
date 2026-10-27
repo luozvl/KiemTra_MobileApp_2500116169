@@ -6,5 +6,5 @@ MSSV: 2500116169
 ![alt text](image-1.png)
 
 Ảnh chụp minh chứng Câu 2
-![alt text](Capture.png)
 ![alt text](image-3.png)
+![alt text](image-4.png)
