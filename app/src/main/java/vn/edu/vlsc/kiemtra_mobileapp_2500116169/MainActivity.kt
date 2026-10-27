@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         val tvStatus = findViewById<TextView>(R.id.tvStatus)
 
         btnLogin.setOnClickListener {
-            val email = edtEmail.text.toString().trim()
-            val password = edtPassword.text.toString().trim()
+            val email = edtEmail.getText().toString().trim()
+            val password = edtPassword.getText().toString().trim()
 
             // 1. Kiểm tra bỏ trống
             if (email.isEmpty() || password.isEmpty()) {
@@ -44,6 +45,9 @@ class MainActivity : AppCompatActivity() {
 
             // 4. Dữ liệu hợp lệ hoàn toàn
             tvStatus.text = "Đăng nhập hợp lệ"
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("USER_EMAIL", email)
+            startActivity(intent)
         }
         }
     }
